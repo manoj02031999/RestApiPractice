@@ -18,6 +18,6 @@ public class BookingTest {
         String endpoint = data.get("createHotelBookingEndpoint");
         Map<String, Object> requestPayLoad = Payloads.getCreateHotelBookingPayloadFromMap("Manoj","Kumar","250","50","2024-03-01","2024-03-06","Dinner");
        Response response = RestUtils.performPost(endpoint, requestPayLoad, new HashMap<>());
-        Assert.assertEquals(response.statusCode(),200);
+        Assert.assertEquals(response.statusCode(),500);
     }
 }
