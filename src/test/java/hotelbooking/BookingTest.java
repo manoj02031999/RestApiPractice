@@ -10,14 +10,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BookingTest {
+public class BookingTest extends  HotelApis{
     @Test
     public void createBooking() throws IOException {
-        String env = System.getProperty("env") == null ? "qa": System.getProperty("env");
-        Map<String,String> data = JsonUtils.getJsonDataAsMap("/"+env+"/hotelApiData.json");
-        String endpoint = data.get("createHotelBookingEndpoint");
         Map<String, Object> requestPayLoad = Payloads.getCreateHotelBookingPayloadFromMap("Manoj","Kumar","250","50","2024-03-01","2024-03-06","Dinner");
-       Response response = RestUtils.performPost(endpoint, requestPayLoad, new HashMap<>());
+       Response response = createHotelBooking(requestPayLoad);
         Assert.assertEquals(response.statusCode(),500);
     }
 }
