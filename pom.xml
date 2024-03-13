@@ -67,7 +67,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testngversion}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
