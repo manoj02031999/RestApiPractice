@@ -23,14 +23,18 @@ public class RestUtils {
         QueryableRequestSpecification queryableRequestSpecification = SpecificationQuerier.query(requestSpecification);
         ExtentReportManager.logInfoDetails("End point is : "+ queryableRequestSpecification.getBaseUri());
         ExtentReportManager.logInfoDetails("Method is : "+ queryableRequestSpecification.getMethod());
-        ExtentReportManager.logInfoDetails("End Headers are : "+ queryableRequestSpecification.getHeaders().asList().toString());
-        ExtentReportManager.logInfoDetails("Request Body is : "+ queryableRequestSpecification.getBody());
+        ExtentReportManager.logInfoDetails("End Headers are : ");
+        ExtentReportManager.logHeadres(queryableRequestSpecification.getHeaders().asList());
+        ExtentReportManager.logInfoDetails("Request Body is : ");
+        ExtentReportManager.logJson(queryableRequestSpecification.getBody());
     }
 
     private static void printResponseLogInReport(Response response){
         ExtentReportManager.logInfoDetails("Response Status is : "+ response.getStatusCode());
-        ExtentReportManager.logInfoDetails("Response Headers are : "+ response.getHeaders().asList().toString());
-        ExtentReportManager.logInfoDetails("Response Body is : "+ response.getBody());
+        ExtentReportManager.logInfoDetails("Response Headers are : ");
+        ExtentReportManager.logHeadres(response.getHeaders().asList());
+        ExtentReportManager.logInfoDetails("Response Body is : ");
+        ExtentReportManager.logJson( response.getBody().prettyPrint());
     }
     public static Response performPost(String endpoint, String requestPayLoad, Map<String,String> headers){
         RequestSpecification requestSpecification = getRequestSpecification(endpoint,requestPayLoad,headers);
