@@ -53,7 +53,9 @@ public class ExtentReportManager {
         SetUp.extentTest.get().info(MarkupHelper.createCodeBlock(json, CodeLanguage.JSON));
     }
     public static void logHeadres(List<Header> headerList){
-        String[][] arrayHeaders = headerList.stream().map(header -> new String[] {header.getName(), header.getValue()}).toArray(String[] [] :: new);
+        String[][] arrayHeaders = headerList.stream()
+                .map(header -> new String[] {header.getName(), header.getValue()})
+                .toArray(String[][] :: new);
         SetUp.extentTest.get().info(MarkupHelper.createTable(arrayHeaders));
     }
 }

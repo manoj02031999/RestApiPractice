@@ -1,7 +1,11 @@
 package hotelbooking;
 
+import com.github.javafaker.Faker;
+
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class Payloads {
     public static String getCreateHotelBookingPayloadFromString(String firstname,String lastname, String totalprice, String depositpaid,
@@ -30,6 +34,20 @@ public class Payloads {
         payload.put("checkin", checkin);
         payload.put("checkout", checkout);
         payload.put("additionalneeds", additionalneeds);
+
+        return payload;
+    }
+
+    public static Map<String,Object> getCreateHotelBookingPayloadFromMap(){
+        Map<String,Object> payload = new HashMap<>();
+        Faker faker = new Faker();
+        payload.put("firstname", faker.name().firstName());
+        payload.put("lastname", faker.name().lastName());
+        payload.put("totalprice", faker.number().digits(100));
+        payload.put("depositpaid", faker.number().digits(50));
+        payload.put("checkin", faker.date().birthday());
+        payload.put("checkout", faker.date().future(2, TimeUnit.of(ChronoUnit.DAYS)));
+        payload.put("additionalneeds", faker.name().name());
 
         return payload;
     }

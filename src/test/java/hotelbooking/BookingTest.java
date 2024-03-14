@@ -10,7 +10,8 @@ import java.util.Map;
 public class BookingTest extends  HotelApis{
     @Test
     public void createBooking() throws IOException {
-        Map<String, Object> requestPayLoad = Payloads.getCreateHotelBookingPayloadFromMap("Manoj","Kumar","250","50","2024-03-01","2024-03-06","Dinner");
+        Map<String, Object> requestPayLoad = Payloads.getCreateHotelBookingPayloadFromMap(); // "Manoj","Kumar","250","50","2024-03-01","2024-03-06","Dinner"
+        System.out.println(requestPayLoad);
        Response response = createHotelBooking(requestPayLoad);
         Assert.assertEquals(response.statusCode(),200);
     }
