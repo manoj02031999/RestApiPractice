@@ -46,6 +46,8 @@
         <lombokversion>1.18.30</lombokversion>
         <commonlangsversion>3.14.0</commonlangsversion>
         <mavensurefirepluginverion>3.0.0-M5</mavensurefirepluginverion>
+        <jdbcversion>6.1.2</jdbcversion>
+        <datajdbc>3.2.1</datajdbc>
     </properties>
 
     <dependencies>
@@ -77,6 +79,14 @@
             <version>${testngversion}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jdbc -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+            <version>${datajdbc}</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -97,6 +107,15 @@
             <artifactId>extentreports</artifactId>
             <version>${extentreportsversion}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+<!--            <version>${jdbcversion}</version>-->
+            <version>5.2.9.RELEASE</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
@@ -121,6 +140,18 @@
             <version>${commonlangsversion}</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <version>5.1.36</version>-->
+<!--        </dependency>-->
+
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
+        </dependency>
 
     </dependencies>
 </project>
