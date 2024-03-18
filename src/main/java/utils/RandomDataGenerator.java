@@ -15,8 +15,8 @@ public class RandomDataGenerator {
                 return faker.name().lastName();
             case TOTALPRICE:
                 return faker.number().digits(4);
-            case DEPOSITPAID:
-                return faker.number().digits(4);
+//            case DEPOSITPAID:
+//                return faker.number().digits(4);
             case CHECKIN:
                 return String.valueOf(faker.date().future(1, TimeUnit.of(ChronoUnit.DAYS)));
             case CHECKOUT:
@@ -26,6 +26,10 @@ public class RandomDataGenerator {
             default:
                 return "data is not available";
         }
+
+    }
+    public static Boolean getRandomDataForDeposit(RandomDataTypeNames dataTypeNames){
+        return faker.bool().bool();
     }
 
 }

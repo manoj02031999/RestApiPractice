@@ -43,7 +43,7 @@
         <gsonversion>2.10.1</gsonversion>
         <extentreportsversion>5.1.1</extentreportsversion>
         <javafakerversion>1.0.2</javafakerversion>
-        <lombokversion>1.18.30</lombokversion>
+        <lombokversion>1.18.24</lombokversion>
         <commonlangsversion>3.14.0</commonlangsversion>
         <mavensurefirepluginverion>3.0.0-M5</mavensurefirepluginverion>
         <jdbcversion>6.1.2</jdbcversion>
@@ -151,6 +151,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.22</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>5.0.0-alpha.12</version>
         </dependency>
 
     </dependencies>
