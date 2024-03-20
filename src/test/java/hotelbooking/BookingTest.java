@@ -11,8 +11,8 @@ public class BookingTest extends HotelApis {
     @Test
     public void createBooking() throws IOException {
        // BookHotel requestPayLoad = Payloads.getCreateHotelBookingPayloadFromPojo(); // "Manoj","Kumar","250","50","2024-03-01","2024-03-06","Dinner"
-       // BookHotel requestPayLoad = new BookHotel();
-        BookHotel requestPayLoad = new BookHotel().toBuilder().firstname("Manoj").build();
+        BookHotel requestPayLoad = new BookHotel();
+        //BookHotel requestPayLoad = new BookHotel().toBuilder().firstname("Manoj").build();
         System.out.println(requestPayLoad);
         Response response = createHotelBooking(requestPayLoad);
 
