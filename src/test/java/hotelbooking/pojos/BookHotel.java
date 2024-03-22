@@ -1,7 +1,12 @@
 package hotelbooking.pojos;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import utils.RandomDataGenerator;
 import utils.RandomDataTypeNames;
+
+import java.util.Objects;
+
 
 public class BookHotel {
     private String firstname;
@@ -30,6 +35,37 @@ public class BookHotel {
         this.depositpaid = depositpaid;
         this.bookingdates = bookingdates;
         this.additionalneeds = additionalneeds;
+    }
+
+    // equals and hashcode
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        BookHotel bookHotel = (BookHotel) obj;
+        return Objects.equals(firstname, bookHotel.firstname) &&
+                Objects.equals(lastname, bookHotel.lastname) &&
+                Objects.equals(totalprice, bookHotel.totalprice) &&
+                Objects.equals(depositpaid, bookHotel.depositpaid)&&
+                Objects.equals(bookingdates,bookHotel.bookingdates)&&
+                Objects.equals(additionalneeds, bookHotel.additionalneeds);
+    }
+    @Override
+    public int hashCode(){
+        return Objects.hash(firstname,lastname,totalprice,depositpaid,bookingdates,additionalneeds);
+    }
+
+    // JSON Serialization
+    public String toJson(){
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public String getFirstname() {
@@ -124,6 +160,9 @@ import utils.RandomDataTypeNames;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
+@EqualsAndHashCode
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class BookHotel {
     // private String gender = Stream.of("male","female","others").findAny().get(); // to get a gender
     private String firstname = RandomDataGenerator.getRandomDataFor(RandomDataTypeNames.FIRSTNAME);
@@ -146,4 +185,5 @@ public class BookHotel {
 
 }
 */
+
 

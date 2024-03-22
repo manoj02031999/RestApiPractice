@@ -13,9 +13,9 @@ public class HotelApis {
             return RestUtils.performPost(endpoint, CreateHotelBookingPayload, new HashMap<>());
 
     }
-    public Response createHotelBooking(BookHotel CreateHotelBookingPayload) {
+    public Response createHotelBooking(BookHotel createHotelBookingPayload) {
         String endpoint = (String) Base.dataFromJsonFile.get("createHotelBookingEndpoint");
-        return RestUtils.performPost(endpoint, CreateHotelBookingPayload, new HashMap<>());
+        return RestUtils.performPost(endpoint, createHotelBookingPayload, new HashMap<>());
 
     }
 }

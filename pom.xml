@@ -48,6 +48,7 @@
         <mavensurefirepluginverion>3.0.0-M5</mavensurefirepluginverion>
         <jdbcversion>6.1.2</jdbcversion>
         <datajdbc>3.2.1</datajdbc>
+        <hamcrestversion>2.2</hamcrestversion>
     </properties>
 
     <dependencies>
@@ -158,6 +159,16 @@
             <artifactId>okhttp</artifactId>
             <version>5.0.0-alpha.12</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrestversion}</version>
+            <scope>test</scope>
+        </dependency>
+
+
 
     </dependencies>
 </project>
