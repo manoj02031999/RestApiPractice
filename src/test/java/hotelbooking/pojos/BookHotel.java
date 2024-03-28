@@ -1,5 +1,6 @@
 package hotelbooking.pojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import utils.RandomDataGenerator;
@@ -7,7 +8,7 @@ import utils.RandomDataTypeNames;
 
 import java.util.Objects;
 
-
+@JsonIgnoreProperties
 public class BookHotel {
     private String firstname;
     private String lastname;
@@ -116,6 +117,7 @@ public class BookHotel {
         this.additionalneeds = additionalneeds;
     }
 
+    @JsonIgnoreProperties
     public static class BookingDates {
         private String checkin;
         private String checkout;

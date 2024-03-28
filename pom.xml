@@ -49,6 +49,7 @@
         <jdbcversion>6.1.2</jdbcversion>
         <datajdbc>3.2.1</datajdbc>
         <hamcrestversion>2.2</hamcrestversion>
+        <javersversion>7.4.0</javersversion>
     </properties>
 
     <dependencies>
@@ -167,6 +168,14 @@
             <version>${hamcrestversion}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.javers/javers-core -->
+        <dependency>
+            <groupId>org.javers</groupId>
+            <artifactId>javers-core</artifactId>
+            <version>${javersversion}</version>
+        </dependency>
+
 
 
 

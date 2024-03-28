@@ -1,6 +1,7 @@
 package hotelbooking;
 
 import hotelbooking.pojos.BookHotel;
+import hotelbooking.pojos.ManojPojo;
 import io.restassured.response.Response;
 import restUtils.RestUtils;
 
@@ -14,6 +15,11 @@ public class HotelApis {
 
     }
     public Response createHotelBooking(BookHotel createHotelBookingPayload) {
+        String endpoint = (String) Base.dataFromJsonFile.get("createHotelBookingEndpoint");
+        return RestUtils.performPost(endpoint, createHotelBookingPayload, new HashMap<>());
+
+    }
+    public Response createHotelBooking(ManojPojo createHotelBookingPayload) {
         String endpoint = (String) Base.dataFromJsonFile.get("createHotelBookingEndpoint");
         return RestUtils.performPost(endpoint, createHotelBookingPayload, new HashMap<>());
 
